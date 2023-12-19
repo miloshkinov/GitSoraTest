@@ -52,7 +52,7 @@ testPlayerWon = describe "IF Validate-Module-Game: playerWon ..." $ do
 testPossibleMoves :: Spec
 testPossibleMoves = describe "IF Validate-Module-Game: possibleMoves ..." $ do
         it "single test" $ do
-            possibleMoves (Pos 'b' 1) (Stack [Red]) `shouldContain` ([Move (Pos 'b' 1) (Pos 'b' 2) 1,Move (Pos 'b' 1) (Pos 'c' 2) 1,Move (Pos 'b' 1) (Pos 'c' 1) 1,Move (Pos 'b' 1) (Pos 'a' 2) 1,Move (Pos 'b' 1) (Pos 'a' 1) 1] :: [Move])
+            possibleMoves (Pos 'b' 1) (Stack [Red]) `shouldMatchList` ([Move (Pos 'b' 1) (Pos 'b' 2) 1,Move (Pos 'b' 1) (Pos 'c' 2) 1,Move (Pos 'b' 1) (Pos 'c' 1) 1,Move (Pos 'b' 1) (Pos 'a' 2) 1,Move (Pos 'b' 1) (Pos 'a' 1) 1] :: [Move])
 
 testIsValidMove :: Spec
 testIsValidMove = describe "IF Validate-Module-Game: isValidMove ..." $ do
