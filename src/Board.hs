@@ -2,12 +2,13 @@
 {-# HLINT ignore "Use guards" #-}
 module Board where  -- do NOT CHANGE export of module
 
-
 -- IMPORTS HERE
 -- Note: Imports allowed that DO NOT REQUIRE TO ANY CHANGES TO package.yaml, e.g.:
 --       import Data.Chars
 
+
 --this has been changed 
+
 
 -- #############################################################################
 -- ############# GIVEN IMPLEMENTATION                           ################
@@ -65,6 +66,8 @@ setUpChecker (x:xs) commaCount slashCount= case x of
               else False
             _-> setUpChecker xs commaCount slashCount
 
+validateFEN _ = True
+
 
 -- #############################################################################
 -- ####################### buildBoard :: String -> Board #######################
@@ -73,6 +76,7 @@ setUpChecker (x:xs) commaCount slashCount= case x of
 -- #############################################################################
 
 buildBoard :: String -> Board
+<<<<<<< HEAD
 buildBoard fenString = iterateThroughRows fenString []
 
 iterateThroughRows:: String -> Board -> Board
@@ -103,6 +107,7 @@ figureList [] liste= liste
 figureList (x:xs) liste= case x of
   'r'-> figureList xs (liste ++ [Red])
   'b'-> figureList xs (liste ++ [Blue])
+buildBoard _ = []
 
 -- #############################################################################
 -- #################### path :: Pos -> Dir -> Int -> [Pos]  ####################
@@ -111,6 +116,7 @@ figureList (x:xs) liste= case x of
 -- #############################################################################
 
 path :: Pos -> Dir -> Int -> [Pos]
+<<<<<<< HEAD
 path position direction steps = manySteps position direction steps [position]
 
 oneDirectionStep:: Pos -> Dir -> Pos
@@ -161,3 +167,6 @@ oppositeDir (Pos col row) direction= case direction of
         (Pos '`' 7) -> SouthEast
         (Pos '`' _) -> NorthEast
         (Pos _ 7) -> SouthWest
+=======
+path _ _ _ = []
+>>>>>>> v2branch/main

@@ -2,6 +2,7 @@
 -- ####### YOUR UNIT TESTS                                           ###########
 -- ####### Note: execute tests using "stack test deathstacks:units"  ###########
 -- #############################################################################
+
 import Test.Hspec
 
 import Board
@@ -96,6 +97,3 @@ testPath = describe "IF Validate-Module-Board: path" $ do
                 path (Pos 'c' 6) NorthWest 1 `shouldBe` ([Pos 'c' 6, Pos 'b' 5]::[Pos])  
 
 
-
-
-        
